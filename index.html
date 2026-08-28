@@ -56,18 +56,14 @@
                 id="n"
                 inputmode="decimal"
                 placeholder="Amount"
-                required
             >
 
             <input
                 id="l"
                 type="number"
-                min="1"
-                step="1"
                 inputmode="numeric"
                 placeholder="Term"
-                title="Enter a positive whole number"
-                required
+                title="Enter a positive number"
             >
 
             <select id="t">
@@ -93,16 +89,14 @@
             let term = Number(l.value);
 
             if (!isFinite(number)) {
+                o.textContent = 'Please enter a valid amount.';
                 return;
             }
 
-            if (!isFinite(number)) {
+            if (!isFinite(term) || term <= 0) {
+                o.textContent = 'Term must be a positive number.';
                 return;
             }
-             if (!isFinite(term) || term <= 0 {
-                 o.textContent = 'Term must be a positive number.';
-                 return;
-             }
 
             o.textContent = '$' + number.toFixed(2);
         }
