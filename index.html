@@ -1,15 +1,20 @@
+<!-- This is a single-line comment -->
 <!doctype html>
 <html>
 <head>
 <style>
 body{text-align:center}
 input{font-size:1.5em;text-align:right;width:150px}
+#o{margin-top:10px;font-size:1.5em}
 </style>
 </head>
 <body>
 <h1>No Interest Calculator</h1>
+<form onsubmit="o.textContent='$'+Number(n.value).toFixed(2);return false">
 $<input id="n" type="number" step="0.01">
-<button onclick="o.textContent='$'+Number(n.value).toFixed(2)">Go</button>
+<button>Go</button>
+</form>
 <div id="o"></div>
 </body>
 </html>
+<!-- This is a single-line comment -->
