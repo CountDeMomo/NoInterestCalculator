@@ -90,10 +90,19 @@
         function calc() {
             let value = n.value.replace(/[^0-9.]/g, '');
             let number = Number(value);
+            let term = Number(l.value);
 
             if (!isFinite(number)) {
                 return;
             }
+
+            if (!isFinite(number)) {
+                return;
+            }
+             if (!isFinite(term) || term <= 0 {
+                 o.textContent = 'Term must be a positive number.';
+                 return;
+             }
 
             o.textContent = '$' + number.toFixed(2);
         }
