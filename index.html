@@ -1,40 +1,98 @@
 <!doctype html>
 <html>
-<head>
-<style>
-body{text-align:center}
-#fields{display:flex;justify-content:center;align-items:center;gap:8px}
-#dollar{font-size:1.5em}
-#n{font-size:1.5em;text-align:right;width:150px}
-#l{font-size:1.5em;text-align:right;width:60px}
-#t{font-size:1.5em;width:110px}
-#o{margin-top:10px;font-size:1.5em}
-</style>
-</head>
-<body>
-<h1>No Interest Calculator</h1>
-<form onsubmit="calc();return false">
-<div id="fields">
-<span id="dollar">$</span>
-<input id="n" inputmode="decimal" required>
-<input id="l" type="number" min="1" required>
-<select id="t">
-<option>Months</option>
-<option>Days</option>
-<option>Years</option>
-</select>
-</div>
-<br>
-<button>Go</button>
-</form>
-<div id="o"></div>
 
-<script>
-function calc(){
- let v=n.value.replace(/[^0-9.]/g,'');
- let x=Number(v);
- if(!isFinite(x))return;
- o.textContent='$'+x.toFixed(2);
-}
-</script>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #fields {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #dollar {
+            font-size: 1.5em;
+        }
+
+        #n {
+            font-size: 1.5em;
+            text-align: right;
+            width: 150px;
+        }
+
+        #l {
+            font-size: 1.5em;
+            text-align: right;
+            width: 60px;
+        }
+
+        #t {
+            font-size: 1.5em;
+            width: 110px;
+        }
+
+        #o {
+            margin-top: 10px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>No Interest Calculator</h1>
+
+    <form onsubmit="calc(); return false">
+
+        <div id="fields">
+            <span id="dollar">$</span>
+
+            <input
+                id="n"
+                inputmode="decimal"
+                required
+            >
+
+            <input
+                id="l"
+                type="number"
+                min="1"
+                inputmode="numeric"
+                required
+            >
+
+            <select id="t">
+                <option>Months</option>
+                <option>Days</option>
+                <option>Years</option>
+            </select>
+        </div>
+
+        <p>
+            <button>Go</button>
+        </p>
+
+        <div id="o"></div>
+
+    </form>
+
+    <script>
+        function calc() {
+            let value = n.value.replace(/[^0-9.]/g, '');
+            let number = Number(value);
+
+            if (!isFinite(number)) {
+                return;
+            }
+
+            o.textContent = '$' + number.toFixed(2);
+        }
+    </script>
+
+</body>
 </html>
