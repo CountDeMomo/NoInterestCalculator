@@ -3,46 +3,6 @@
 <head>
 <style>
 body{text-align:center}
-#n{font-size:1.5em;text-align:right;width:150px}
-#l{font-size:1.5em;text-align:right;width:60px}
-#t{font-size:1.5em;width:110px}
-#o{margin-top:10px;font-size:1.5em}
-</style>
-</head>
-<body>
-<h1>No Interest Calculator</h1>
-<form onsubmit="calc();return false">
-<div>
-$<input id="n" inputmode="decimal" required>
-</div>
-<div>
-<input id="l" type="number" min="1" required>
-<select id="t">
-<option>Months</option>
-<option>Days</option>
-<option>Years</option>
-</select>
-</div>
-<br>
-<button>Go</button>
-</form>
-<div id="o"></div>
-
-<script>
-function calc(){
- let v=n.value.replace(/[^0-9.]/g,'');
- let x=Number(v);
- if(!isFinite(x))return;
- o.textContent='$'+x.toFixed(2);
-}
-</script>
-</html>
-```
-<!doctype html>
-<html>
-<head>
-<style>
-body{text-align:center}
 input,select{font-size:1.5em}
 #n{text-align:right;width:150px}
 #t{width:80px}
