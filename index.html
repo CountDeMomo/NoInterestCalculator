@@ -55,6 +55,7 @@
             <input
                 id="n"
                 inputmode="decimal"
+                placeholder="Amount"
                 required
             >
 
@@ -62,13 +63,17 @@
                 id="l"
                 type="number"
                 min="1"
+                step="1"
                 inputmode="numeric"
+                placeholder="Term"
+                title="Enter a positive whole number"
                 required
             >
 
             <select id="t">
-                <option>Months</option>
+                <option>Hours</option>
                 <option>Days</option>
+                <option>Months</option>
                 <option>Years</option>
             </select>
         </div>
