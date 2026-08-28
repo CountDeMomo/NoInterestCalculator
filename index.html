@@ -1,28 +1,29 @@
-<!-- This is a single-line comment -->
 <!doctype html>
 <html>
 <head>
 <style>
 body{text-align:center}
-input,select{font-size:1.5em;width:150px}
-#n{text-align:right}
+input,select{font-size:1.5em}
+#n{text-align:right;width:150px}
+#t{width:80px}
 #o{margin-top:10px;font-size:1.5em}
 </style>
 </head>
 <body>
 <h1>No Interest Calculator</h1>
 <form onsubmit="calc();return false">
-$<input id="n" inputmode="decimal" pattern="[0-9]*\.?[0-9]*" required>
+<div>
+$<input id="n" inputmode="decimal" required>
+</div>
+<div>
+<input id="l" type="number" min="1" required>
 <select id="t">
-<option>1 month</option>
-<option>3 months</option>
-<option>6 months</option>
-<option>12 months</option>
-<option>24 months</option>
-<option>36 months</option>
-<option>48 months</option>
-<option>60 months</option>
+<option>Months</option>
+<option>Days</option>
+<option>Years</option>
 </select>
+</div>
+<br>
 <button>Go</button>
 </form>
 <div id="o"></div>
@@ -35,6 +36,4 @@ function calc(){
  o.textContent='$'+x.toFixed(2);
 }
 </script>
-</body>
 </html>
-<!-- This is a single-line comment -->
