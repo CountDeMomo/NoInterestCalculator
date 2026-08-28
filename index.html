@@ -3,6 +3,8 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>No Interest Calculator</title>
+
     <style>
         body {
             text-align: center;
@@ -15,14 +17,15 @@
             gap: 8px;
         }
 
-        #dollar {
-            font-size: 1.5em;
-        }
-
         #n {
             font-size: 1.5em;
             text-align: right;
             width: 150px;
+        }
+
+        #c {
+            font-size: 1.5em;
+            width: 70px;
         }
 
         #l {
@@ -50,13 +53,23 @@
     <form onsubmit="calc(); return false">
 
         <div id="fields">
-            <span id="dollar">$</span>
 
             <input
                 id="n"
                 inputmode="decimal"
                 placeholder="Amount"
             >
+
+            <select id="c">
+                <option>$</option>
+                <option>€</option>
+                <option>£</option>
+                <option>¥</option>
+                <option>₹</option>
+                <option>₽</option>
+                <option>₩</option>
+                <option>₿</option>
+            </select>
 
             <input
                 id="l"
@@ -72,6 +85,7 @@
                 <option>Months</option>
                 <option>Years</option>
             </select>
+
         </div>
 
         <p>
@@ -98,7 +112,10 @@
                 return;
             }
 
-            o.textContent = '$' + number.toFixed(2);
+            o.textContent = c.value + number.toLocaleString('en-US', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
         }
     </script>
 
